@@ -1,13 +1,14 @@
-import Image from "next/image";
-import { Inter } from "@next/font/google";
+import { ListCategory } from "@/layouts/listCategory/listCategory";
+import ListProducts from "@/layouts/listProducts/listProducts";
 import styles from "./page.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>MADLOBA</h1>
+      <ListCategory />
+      <div>
+        <ListProducts />
+      </div>
     </main>
   );
 }
