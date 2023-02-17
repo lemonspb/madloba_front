@@ -24,11 +24,11 @@ export function ListCategory() {
     <div>
       {list.map((item: any) => {
         return (
-          <div>
+          <div key={item.name}>
             <div>{item.name}</div>
             <div>
               {item.child.map((child: any) => (
-                <div>{child.name}</div>
+                <div key={child.name}>{child.name}</div>
               ))}
             </div>
           </div>
