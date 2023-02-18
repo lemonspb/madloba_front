@@ -1,5 +1,8 @@
+"use client";
+
 import "./globals.css";
 import { Header } from "@/layouts/header/header";
+import { ConfigProvider } from "antd";
 export default function RootLayout({
   children,
 }: {
@@ -7,14 +10,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
       <body>
-        <Header />
-        {children}
+        <ConfigProvider
+          theme={{
+            components: {
+              Button: {
+                borderRadius: 50,
+              },
+            },
+          }}
+        >
+          <Header />
+          {children}
+        </ConfigProvider>
       </body>
     </html>
   );
