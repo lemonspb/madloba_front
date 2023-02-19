@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import { Header } from "@/layouts/header/header";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, Modal } from "antd";
 export default function RootLayout({
   children,
 }: {
@@ -27,6 +27,11 @@ export default function RootLayout({
           <Header />
           {children}
         </ConfigProvider>
+        {/* <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal> */}
       </body>
     </html>
   );

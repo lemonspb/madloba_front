@@ -46,7 +46,7 @@ export default function ListProducts() {
   ];
 
   const onOpenProduct = (id: string) => {
-    router.push(`products/${id}`);
+    router.push(`product/${id}`);
   };
   return (
     <List
