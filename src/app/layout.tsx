@@ -14,6 +14,9 @@ export default function RootLayout({
       <body>
         <ConfigProvider
           theme={{
+            token: {
+              colorPrimary: "#0058A3",
+            },
             components: {
               Button: {
                 borderRadius: 50,
