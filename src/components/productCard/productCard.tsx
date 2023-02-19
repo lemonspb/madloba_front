@@ -25,9 +25,10 @@ export const ProductCard: FC<ProductCardProps> = ({
     <Card
       cover={Boolean(image) && <Image src={image} alt={title} />}
       title={title}
+      hoverable
       onClick={() => open && open(id)}
     >
-      <Meta title={price} description={location} />
+      <Meta title={`${price} GEL`} description={location} />
     </Card>
   );
 };

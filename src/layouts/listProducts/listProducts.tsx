@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { List } from "antd";
 import mockImg from "../../../public/mockImg/cover.png";
 import { ProductCard } from "@/components/productCard/productCard";
+import styles from "./listProducts.module.css";
 export default function ListProducts() {
   const router = useRouter();
 
@@ -49,10 +50,10 @@ export default function ListProducts() {
   };
   return (
     <List
-      grid={{ gutter: 16, column: 4 }}
+      grid={{ gutter: 24, column: 3 }}
       dataSource={list}
       renderItem={(item) => (
-        <List.Item>
+        <List.Item className={styles.listItem}>
           <ProductCard
             price={item.price}
             title={item.title}
