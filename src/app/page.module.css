@@ -4,3 +4,7 @@
 
   min-height: 98vh;
 }
+
+.category {
+  max-width: 30%;
+}

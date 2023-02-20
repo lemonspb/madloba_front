@@ -13,7 +13,9 @@ export default function Home() {
   return (
     <MainContainer>
       <main className={`${styles.main}`}>
+        <div className={styles.category}>
         <ListCategory />
+        </div>
         <ListProducts />
       </main>
     </MainContainer>

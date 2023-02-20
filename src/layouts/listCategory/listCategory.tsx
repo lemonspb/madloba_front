@@ -1,3 +1,6 @@
+"use client";
+import type { MenuProps } from "antd";
+import { Menu } from "antd";
 import Link from "next/link";
 
 const list = [
@@ -41,22 +44,42 @@ const list = [
 
 export function ListCategory() {
   return (
-    <div>
-      {list.map((item: any) => {
-        return (
-          <div key={item.name}>
-            <div>{item.name}</div>
-            <div>
-              {item.child.map((child: any) => (
-                <div key={child.name}>
-                  <Link href={child.url}>{child.name}</Link>
-                  {child.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <Menu
+        mode="inline"
+        items={[
+          {
+            label: "Одежда, обувь и аксессуары",
+            key: "1",
+            children: [
+              {
+                label: "Женская одежда",
+                key: "2",
+              },
+              {
+                label: "Мужская одежда",
+                key: "3",
+              },
+              {
+                label: "Детская одежда",
+                key: "4",
+              },
+            ],
+          },
+          {
+            label: "Tранспорт",
+            key: "10",
+          },
+          {
+            label: "Работа",
+            key: "11",
+          },
+          {
+            label: "Услуги",
+            key: "12",
+          },
+        ]}
+      />
+    </>
   );
 }
