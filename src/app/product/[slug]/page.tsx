@@ -1,16 +1,42 @@
 "use client";
-import { Typography, Descriptions } from "antd";
+import { Typography, Descriptions, Carousel, Button } from "antd";
 import { MainContainer } from "@/layouts/mainContainer/mainContainer";
+import Image from "next/image";
+import productImageFirst from "../../../../public/mockImg/product.png";
+import productImageSecond from "../../../../public/mockImg/cover.png";
 
+import styles from "./product.module.css";
 const { Title, Paragraph } = Typography;
 
 export default function Product() {
   return (
     <MainContainer>
       <Title>Постер в стиле Эгона Шиле </Title>
-      <div className="">
-        <div></div>
-        <div>
+      <div className={styles.main}>
+        <div className={styles.left}>
+          <div className={styles.carousel}>
+            <Carousel>
+              <div className={styles.slide}>
+                <Image
+                  src={productImageSecond}
+                  width={500}
+                  height={500}
+                  alt="first"
+                />
+              </div>
+              <div className={styles.slide}>
+                <Image
+                  src={productImageFirst}
+                  width={500}
+                  height={500}
+                  alt="second"
+                />
+              </div>
+            </Carousel>
+          </div>
+          <Button type="primary">Связаться с продавцом</Button>
+        </div>
+        <div className={styles.right}>
           <div>юзер</div>
           <div>
             <Title level={3}>Характеристики</Title>
