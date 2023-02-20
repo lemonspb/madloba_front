@@ -1,3 +1,3 @@
-export default function MainContainrt() {
+export default function MainContainer() {
   return <div>dsfsds</div>;
 }
