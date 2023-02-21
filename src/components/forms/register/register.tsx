@@ -40,7 +40,7 @@ export const Register: React.FC = () => (
       <Input.Password placeholder="Подтвердите пароль" size="large" />
     </Form.Item>
 
-    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+    <Form.Item wrapperCol={{ offset: 0, span: 1 }}>
       <Button type="primary" htmlType="submit">
         Регистрация
       </Button>

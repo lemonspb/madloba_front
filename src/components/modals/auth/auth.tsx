@@ -18,6 +18,11 @@ export const ModalAuth: FC<ModalAuthProps> = ({ isOpen, onClose }) => {
       container = document.querySelector("body");
     }
   }, []);
+
+  const closeModal = () => {
+    onClose && onClose();
+  };
+
   return (
     <>
       <Modal
@@ -26,23 +31,25 @@ export const ModalAuth: FC<ModalAuthProps> = ({ isOpen, onClose }) => {
         getContainer={container || false}
         open={isOpen}
         footer={null}
-        onCancel={() => onClose && onClose()}
+        onCancel={() => closeModal()}
       >
-        <Tabs
-          defaultActiveKey="1"
-          items={[
-            {
-              key: "1",
-              label: `Войти`,
-              children: <Auth />,
-            },
-            {
-              key: "2",
-              label: `Регистрация`,
-              children: <Register />,
-            },
-          ]}
-        />
+        {isOpen && (
+          <Tabs
+            defaultActiveKey="1"
+            items={[
+              {
+                key: "1",
+                label: `Войти`,
+                children: <Auth />,
+              },
+              {
+                key: "2",
+                label: `Регистрация`,
+                children: <Register />,
+              },
+            ]}
+          />
+        )}
       </Modal>
     </>
   );
